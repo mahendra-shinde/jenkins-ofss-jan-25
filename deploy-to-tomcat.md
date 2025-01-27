@@ -14,11 +14,11 @@
     Top-Level-Maven-Target:
       Maven: M2
       Goal: package
-     Windows Batch Command:
-       Command: copy target\ROOT.war mahendra.war  # Replace mahendra with your name
+     
    Post-Build-Steps:
         deploy-war/ear-to-container:
-           war-file: mahendra.war  # Replace mahendra with your name
+           war-file: target/*.war
+           Context: /mahendra # Use your name !
            container:
               Add-Container: choose Tomcat 9.x
               Credential : Add new username & password 'manager'
