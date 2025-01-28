@@ -1,38 +1,53 @@
 # Local Jenkins Installation
 
-## Pre-requisites
-1. Java 11 SDK (Java-8 no longer supported)
-2. Apache Maven 3.x
-3. Jenkins.WAR file downloaded from jenkins.io
+## Jenkins Installation (Using WAR File)
 
-## Steps
+Follow these steps to install Jenkins using the WAR file:
 
-1. Download jenkins WAR file using URL `https://get.jenkins.io/war-stable/2.479.3/jenkins.war`
+1. **Prerequisites:**
 
-1. Open Command prompt and run following commands:
+   - Ensure Java (JDK 11 or higher) is installed on your system.
+   - Verify Java installation:
+     ```bash
+     java -version
+     ```
 
-    ```
-    javac --version
-    cd Downloads
-    java -jar jenkins.war
-    ```
-1. Copy the `initial password` (Left click to select,  rigt click to copy)
-1. Press ESC
-1.  Visit `http://localhost:8080` and use the password copied from command prompt.
+1. **Download the Jenkins WAR file:**
 
-1.  Click `Install Suggested Plugins` and wait for installation to complete.
+   - Visit the official Jenkins website: [https://www.jenkins.io/download/](https://www.jenkins.io/download/).
+   - Download the "Generic Java Package (.war)" file.
 
-1. You must create a new Admin User. Provide all details and click "Continue"
+1. **Run the Jenkins WAR file:**
 
-1. On Jenkins Dashboard, click `Manage Jenkins` > `Tools`
+   ```bash
+   java -jar jenkins.war
+   ```
 
-1. Now, Configure three tools
-    ```
-    JDK Installations
+   - Jenkins will start on the default port (8080).
+
+1. **Access Jenkins:**
+
+   - Open a browser and navigate to: `http://localhost:8080`
+   - Complete the setup wizard by entering the initial admin password (found in the console output or the `secrets/initialAdminPassword` file).
+
+1.  **Install Plugins:**
+
+    - Click `Install Suggested Plugins` and wait for installation to complete.
+
+1. **Admin User:** 
+
+    - You must create a new Admin User. Provide all details and click   "Continue"
+
+1. **Tools configuration:**
+    - On Jenkins Dashboard, click `Manage Jenkins` > `Tools`
+    - Now, Configure three tools
+      
+      ```
+      JDK Installations
         Name: Java17
         JAVA_HOME: C:\Program Files\Java\jdk-17
         
-    Maven Installations:
+      Maven Installations:
         Name: M3
         MAVEN_HOME=D:\apache-maven-3.9.5
-    ```
+      ```
