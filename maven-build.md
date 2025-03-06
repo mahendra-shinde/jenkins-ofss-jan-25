@@ -52,8 +52,8 @@ General:
   Description: Sample Java Project with JUnit Test Cases
 Source-Code-Management:
   Git:
-    Repository: https://github.com/mahendra-shinde/webgoat
-    Branch: */main
+    Repository: https://github.com/mahendra-shinde/ci-servlet-demo
+    Branch: */master
 
 Build-Triggers: None
 
@@ -67,8 +67,6 @@ Build-Steps:
 Post-Build-Steps:
   Archive-the-Artifacts:
     Files: target/*.war
-  Publish-JUnit-test-result-report:
-     Test-Reports-XML: target/surefire-reports/TEST-*.xml
 
 ```
 
